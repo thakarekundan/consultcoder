@@ -1,0 +1,30 @@
+{% extends "voucher/base.html" %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">All Valid Voucher are as follow</h1>
+<div class="row">
+    <div class="col-md-8"> 
+        <table class="table table-bordered table-dark">
+        <thead>
+            <th scope="col">Code</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+        </thead>
+        <tbody>
+		{% for book in context %}
+            <tr>
+                <td>{{ book.0 }}</td>
+                <td>{{ book.1 }}</td>
+                <td>{{ book.2 }} </td>
+                <td>{{ book.3 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    <div>
+  </div>
+</div>
+{% endblock %}

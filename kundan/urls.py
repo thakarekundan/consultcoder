@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from testapp import views
+from testapp import views 
+from voucher import views as v
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('save/<str:name>/<int:rollno>/<int:age>/<int:marks>/<str:address>',views.save),
@@ -23,4 +25,16 @@ urlpatterns = [
     path('get_data/<str:name>',views.get_data),
     path('delete/<str:name>',views.delete),
     path('max_mark',views.max_mark),
+
+
+    path('',v.home),
+    path('add_voucher/',v.add_voucher),
+    path('get_voucher/',v.get_voucher),
+    path('distribute_voucher/',v.dist_voucher),
+
+    path('merchant_dashboard/',v.merchant_dashboard),
+    path('merchant_get_voucher/',v.merchant_get_voucher),
+    path('merchant_distribute/',v.merchant_distribute),
+
+    path('registration/',v.reg),
     ]
